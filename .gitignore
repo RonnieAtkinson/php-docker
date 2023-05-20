@@ -11,4 +11,4 @@ yarn-error.log
 .phpunit*
 
 # secrets
-# api/.env
+.env
