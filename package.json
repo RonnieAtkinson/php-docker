@@ -1,23 +1,28 @@
 {
-  "name": "php-docker",
-  "version": "1.0.0",
-  "main": "index.js",
-  "repository": "git@github.com:RonnieAtkinson/php-docker.git",
-  "author": "James Cook <jamespetercook@googlemail.com>",
-  "license": "MIT",
-  "private": true,
-  "scripts": {
-    "composer.install": "run-script-os",
-    "composer.install:darwin:linux": "docker run --rm --tty --interactive --volume \"$(pwd)/app\":/app composer --ignore-platform-reqs install",
-    "composer.install:windows": "bash -c 'docker run --rm --volume \"$(pwd -W)/app\":/app composer --ignore-platform-reqs install'",
-    "composer.update": "run-script-os",
-    "composer.update:darwin:linux": "docker run --rm --tty --interactive --volume \"$(pwd)/app\":/app composer --ignore-platform-reqs update",
-    "composer.update:windows": "bash -c 'docker run --rm --volume \"$(pwd -W)/app\":/app composer --ignore-platform-reqs update'",
-    "composer.require": "run-script-os",
-    "composer.require:darwin:linux": "docker run --rm --tty --interactive --volume \"$(pwd)/app\":/app composer --ignore-platform-reqs require",
-    "composer.require:windows": "bash -c 'docker run --rm --volume \"$(pwd -W)/app\":/app composer --ignore-platform-reqs require'"
-  },
-  "dependencies": {
-    "run-script-os": "^1.1.6"
-  }
+    "name": "php-docker",
+    "version": "1.0.0",
+    "main": "index.js",
+    "repository": "git@github.com:RonnieAtkinson/php-docker.git",
+    "license": "MIT",
+    "private": true,
+    "scripts": {
+        "composer": "run-script-os",
+        "composer:darwin:linux": "docker run --rm --tty --interactive --volume \"$(pwd)/app\":/app composer",
+        "composer:windows": "bash -c 'docker run --rm --volume \"$(pwd -W)/app\":/app composer'",
+        "composer.install": "run-script-os",
+        "composer.install:darwin:linux": "docker run --rm --tty --interactive --volume \"$(pwd)/app\":/app composer install --ignore-platform-reqs",
+        "composer.install:windows": "bash -c 'docker run --rm --volume \"$(pwd -W)/app\":/app composer install --ignore-platform-reqs'",
+        "composer.update": "run-script-os",
+        "composer.update:darwin:linux": "docker run --rm --tty --interactive --volume \"$(pwd)/app\":/app composer update --ignore-platform-reqs",
+        "composer.update:windows": "bash -c 'docker run --rm --volume \"$(pwd -W)/app\":/app composer update --ignore-platform-reqs'",
+        "composer.require": "run-script-os",
+        "composer.require:darwin:linux": "docker run --rm --tty --interactive --volume \"$(pwd)/app\":/app composer require --ignore-platform-reqs",
+        "composer.require:windows": "bash -c 'docker run --rm --volume \"$(pwd -W)/app\":/app composer require --ignore-platform-reqs'",
+        "composer.dump-autoload": "run-script-os",
+        "composer.dump-autoload:darwin:linux": "docker run --rm --tty --interactive --volume \"$(pwd)/app\":/app composer dump-autoload",
+        "composer.dump-autoload:windows": "bash -c 'docker run --rm --volume \"$(pwd -W)/app\":/app composer dump-autoload'"
+    },
+    "dependencies": {
+        "run-script-os": "^1.1.6"
+    }
 }
