@@ -1,0 +1,13 @@
+# dependencies
+vendor
+
+# build output
+#public
+
+# generated files
+.DS_Store
+yarn-error.log
+.phpunit*
+
+# secrets
+# api/.env
